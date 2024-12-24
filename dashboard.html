@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo h1 {
+            font-size: 30px;
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            border: 2px;
+            background-color: #f39c12;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            min-height: 80vh;
+            margin: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2d3e50;
+            color: white;
+            padding: 20px;
+            height: auto;
+            /* text-align: center; */
+            /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+        }
+        .sidebar h3 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            margin: 10px;            
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 8px;
+            display: block;
+            border-radius: 5px;
+        }
+        .sidebar ul li a:hover {
+            background-color: #34495e;
+        }
+        .content {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            margin-left: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>HTML WEBSITE</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <ul>
+                <li><a href="#" onclick="loadContent('intro')">HTML Introduction</a></li>
+                <li><a href="#" onclick="loadContent('attributes')">HTML Attributes</a></li>
+                <li><a href="#" onclick="loadContent('paragraphs')">HTML Paragraphs</a></li>
+                <li><a href="#" onclick="loadContent('headings')">HTML Headings</a></li>
+                <li><a href="#" onclick="loadContent('colors')">HTML Colors</a></li>
+                <li><a href="#" onclick="loadContent('lists')">HTML Lists</a></li>
+            </ul>
+        </aside>
+
+        <main class="content" id="mainContent">
+            <h2>Welcome to Online Learning Platform.</h2>
+            <p>This website is used for everyone ,we can know the easy way to get the answers.</p>
+            <p>Here is where your main content would go, whether it's text, images, or any other media you want to display.</p>
+            <!-- <img src="./resources/img7all.jpg" width="900" height=350"> -->
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function loadContent(page) {
+            const mainContent = document.getElementById("mainContent");
+
+            const content = {
+                intro: `
+                    <h2 style="text-align:center;">HTML Introduction</h2>
+                    <p>HTML is the standard markup language for creating web pages. Below is an example of HTML Introduction:</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qz0aGYrrlhU?si=u_ipNTlsBpMQ-wf6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                `,
+                attributes: `
+                    <h2 style="text-align:center;">HTML Attributes</h2>
+                    <p>HTML attributes provide additional information about elements. They are always specified in the opening tag.</p>
+                    <iframe src="https://www.youtube.com/embed/bWPMSSsVdPk" title="HTML Attributes"></iframe>
+                `,
+                paragraphs: `
+                    <h2 style="text-align:center;">HTML Paragraphs</h2>
+                    <p>Paragraphs in HTML are defined using the &lt;p&gt; tag. They help structure the text into readable blocks.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qis4kAOThLw?si=oGPuyQgkg8kj6jBW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                `,
+                headings: `
+                    <h2 style="text-align:center;">HTML Headings</h2>
+                    <p>HTML headings are titles or subtitles defined by &lt;h1&gt; to &lt;h6&gt; tags to organize content hierarchically.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9gHPpwq6IaY?si=gcRXGAiyzX7oFX4y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                `,
+                colors: `
+                    <h2 style="text-align:center;">HTML Colors</h2>
+                    <p>HTML allows styling with colors using various formats like color names, HEX, RGB, and HSL values.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5prD6HfwQhM?si=yCeyp3Fefatkw5eP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                `,
+                lists: `
+                    <h2 style="text-align:center;">HTML Lists</h2>
+                    <p>HTML supports ordered (&lt;ol&gt;) and unordered (&lt;ul&gt;) lists to structure items in a list format.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iTKsV5P96Ac?si=79giblyulWmAKuVO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                `
+            };
+
+            mainContent.innerHTML = content[page] || `
+                <h2>404</h2>
+                <p>Content not found.</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>

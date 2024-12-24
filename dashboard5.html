@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo h1 {
+            font-size: 30px;
+            margin: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            /* padding: 5px 10px; */
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            border: 2px;
+            background-color: #f39c12;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            min-height: 80vh;
+            margin: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2d3e50;
+            color: white;
+            padding: 20px;
+            height: auto;
+            /* text-align: center; */
+            /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+        }
+        .sidebar h3 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            margin: 10px;            
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 8px;
+            display: block;
+            border-radius: 5px;
+        }
+        .sidebar ul li a:hover {
+            background-color: #34495e;
+        }
+        .content {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            margin-left: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>JAVA WEBSITE</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <ul>
+                <li><a href="#" onclick="loadContent('intro')">JAVA Introduction</a></li>
+                <li><a href="#" onclick="loadContent('variables')">JAVA Variables</a></li>
+                <li><a href="#" onclick="loadContent('datatypes')">JAVA Data Types</a></li>
+                <li><a href="#" onclick="loadContent('booleans')">JAVA Booleans</a></li>
+                <li><a href="#" onclick="loadContent('operators')">JAVA Operators</a></li>
+                <li><a href="#" onclick="loadContent('strings')">JAVA Strings</a></li>
+            </ul>
+        </aside>
+
+        <main class="content" id="mainContent">
+            <h2>Welcome to Online Learning Platform.</h2>
+            <p>This website is used for everyone ,we can know the easy way to get the answers.</p>
+            <p>Here is where your main content would go, whether it's text, images, or any other media you want to display.</p>
+            <!-- <img src="./resources/img7all.jpg" width="900" height=350"> -->
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function loadContent(page) {
+            const mainContent = document.getElementById("mainContent");
+
+            const content = {
+                intro: `
+                    <h2 style="text-align:center;">JAVA Introduction</h2>
+                    <p>Java is a popular programming language, created in 199.
+                     It is owned by Oracle, and more than 3 billion devices run Java.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mG4NLNZ37y4?si=w7DNpF5FYMmMSv9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                `,
+                variables: `
+                    <h2 style="text-align:center;">JAVA Variables</h2>
+                    <p>Variables are containers for storing data values.
+
+                      In Java, there are different types of variables, for example:
+
+                        String - stores text, such as "Hello". String values are surrounded by double quotes
+                       int - stores integers (whole numbers), without decimals, such as 123 or -123
+                        float - stores floating point numbers, with decimals, such as 19.99 or -19.99
+                       char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+                       boolean - stores values with two states: true or false</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xINs7Qqlk-Y?si=zH_t7ph4xzUXtfDT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>   
+
+                        
+
+                `,
+                datatypes: `
+                    <h2 style="text-align:center;">JAVA Data Types </h2>
+                    <p>Data types are divided into two groups:
+
+                    Primitive data types - includes byte, short, int, long, float, double, boolean and char
+                    Non-primitive data types - such as String, Arrays and Classes (you will learn more about these in a later chapter)</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Le25I331_yU?si=62_NeH9ozWE49Sk6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                `,
+                booleans: `
+                    <h2 style="text-align:center;">JAVA Booleans</h2>
+                    <P>A boolean type is declared with the boolean keyword and can only take the values true or false:</P>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Jlv_fdB4cTY?si=yb1a_qXKtovTGc3g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                `,
+                operators: `
+                    <h2 style="text-align:center;">JAVA Operators</h2>
+                    <p>Operators are used to perform operations on variables and values.
+
+                    In the example below, we use the + operator to add together two values:</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GEmkzPZ9hx8?si=e1gYPHKuUirb-Uto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                 
+                `,
+                strings: `
+                    <h2 style="text-align:center;">JAVA Strings</h2>
+                    <p>Strings are used for storing text.
+
+                     A String variable contains a collection of characters surrounded by double quotes:</p>
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/cV-sOpOgof8?si=cC_gzpl9AH-Sv3jZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                `
+            };
+
+            mainContent.innerHTML = content[page] || `
+                <h2>404</h2>
+                <p>Content not found.</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
